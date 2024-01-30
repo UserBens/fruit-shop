@@ -23,14 +23,16 @@
 
     <div class="pb-3"><a href="{{ route('produk.create') }}" class="btn btn-primary">+ Tambah Produk</a></div>
     <div class="table-responsive">
-        {{-- @if ($produk->isEmpty())
+        @if ($produk->isEmpty())
             <h4 class="text-center">Tidak ada data yang sesuai dengan pencarian..</h4>
         @else
             <table class="table table-stripped">
                 <thead>
                     <tr>
                         <th class="col-1">No</th>
-                        <th class="col-4">Nama Produk</th>
+                        <th class="col-2">Nama Produk</th>
+                        <th class="col-2">Stok Produk</th>
+                        <th class="col-2">Status</th>
                         <th class="col-2">Dibuat Tanggal</th>
                         <th class="col-3">Aksi</th>
                     </tr>
@@ -40,6 +42,8 @@
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $item->nama_produk }}</td>
+                            <td>{{ $item->stok_produk }}</td>
+                            <td>{{ $item->status }}</td>
                             <td>{{ $item->created_at }}</td>
 
                             <td>
@@ -87,6 +91,6 @@
             <div class="d-flex justify-content-center mt-4">
                 {{ $produk->links('pagination::bootstrap-4') }}
             </div>
-        @endif --}}
+        @endif
     </div>
 @endsection

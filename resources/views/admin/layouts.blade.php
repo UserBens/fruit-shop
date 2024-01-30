@@ -115,7 +115,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('produk.index') }}">
-                            <i class="mdi mdi-file-document-box-outline menu-icon"></i>
+                            <i class="mdi mdi-shopping menu-icon"></i>
                             <span class="menu-title">Produk</span>
                         </a>
                     </li>
@@ -139,13 +139,8 @@
                 <!-- content-wrapper ends -->
                 <!-- partial:partials/_footer.html -->
                 <footer class="footer">
-                    <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright ©
-                            Pengurus
-                            RT 06 RW 02 Desa Keputih Surabaya </a>2023</span>
-                        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Tim Pengembang Website
-                            KKN NR 5 UNTAG Surabaya 🚀 </span>
-                    </div>
+                   
+                   
                 </footer>
                 <!-- partial -->
             </div>

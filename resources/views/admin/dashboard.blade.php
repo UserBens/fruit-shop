@@ -129,12 +129,15 @@
                             <i class="mdi mdi-file-document-box-outline menu-icon"></i>
                             <span class="menu-title">Dashboard</span>
                         </a>
+
+                    </li>
+
+                    <li class="nav-item">
                         <a class="nav-link" href="{{ route('produk.index') }}">
-                            <i class="mdi mdi-file-document-box-outline menu-icon"></i>
+                            <i class="mdi mdi-shopping menu-icon"></i>
                             <span class="menu-title">Produk</span>
                         </a>
                     </li>
-
                 </ul>
             </nav>
             <!-- partial -->
@@ -145,7 +148,7 @@
                         <div class="col-md-12 stretch-card">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4>Selamat Datang Di Halaman Admin RT 06 RW 02 Desa Keputih 🙌</h4>
+                                    <h4>Selamat Datang Di Halaman Admin Fruit Shop 🙌</h4>
                                 </div>
                             </div>
                         </div>
@@ -160,45 +163,14 @@
                                             <div class="d-flex flex-wrap justify-content-xl-between">
                                                 <div
                                                     class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
-                                                    <i class="mdi mdi-pencil-box me-3 icon-lg text-danger"></i>
-                                                    <div class="d-flex flex-column justify-content-around">
-                                                        <small class="mb-1 text-muted">Total Postingan</small>
-                                                        {{-- <h5 class="me-2 mb-0 text-center">{{ $total_postingan }}</h5> --}}
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
                                                     <i class="mdi mdi-shopping me-3 icon-lg text-success"></i>
                                                     <div class="d-flex flex-column justify-content-around">
                                                         <small class="mb-1 text-muted">Total
                                                             Produk</small>
-                                                        {{-- <h5 class="me-2 mb-0 text-center">{{ $total_produk }}</h5> --}}
+                                                        <h5 class="me-2 mb-0 text-center">{{ $total_produk }}</h5>
                                                     </div>
                                                 </div>
-                                                <div
-                                                    class="d-flex border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
-                                                    <i class="mdi mdi-book-open me-3 icon-lg text-warning"></i>
-                                                    <div class="d-flex flex-column justify-content-around">
-                                                        <small class="mb-1 text-muted">Total Notulensi</small>
-                                                        {{-- <h5 class="me-2 mb-0 text-center">{{ $total_notulen }}</h5> --}}
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="d-flex py-3 border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
-                                                    <i class="mdi mdi-account-group me-3 icon-lg text-dark"></i>
-                                                    <div class="d-flex flex-column justify-content-around">
-                                                        <small class="mb-1 text-muted">Total Pengurus</small>
-                                                        {{-- <h5 class="me-2 mb-0 text-center">{{ $total_pengurus }}</h5> --}}
-                                                    </div>
-                                                </div>
-                                                <div
-                                                    class="d-flex py-3 border-md-right flex-grow-1 align-items-center justify-content-center p-3 item">
-                                                    <i class="mdi mdi-chart-bar me-3 icon-lg text-primary"></i>
-                                                    <div class="d-flex flex-column justify-content-around">
-                                                        <small class="mb-1 text-muted">Total Proker</small>
-                                                        {{-- <h5 class="me-2 mb-0 text-center">{{ $total_proker }}</h5> --}}
-                                                    </div>
-                                                </div>
+
                                             </div>
                                         </div>
                                     </div>
@@ -210,13 +182,7 @@
                 <!-- content-wrapper ends -->
                 <!-- partial:partials/_footer.html -->
                 <footer class="footer">
-                    <div class="d-sm-flex justify-content-center justify-content-sm-between">
-                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright ©
-                            Pengurus
-                            RT 06 RW 02 Desa Keputih Surabaya </a>2023</span>
-                        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Tim Pengembang Website
-                            KKN NR 5 UNTAG Surabaya 🚀</span>
-                    </div>
+                    
                 </footer>
                 <!-- partial -->
             </div>
