@@ -28,6 +28,18 @@
         </div>
 
         <div class="mb-3">
+            <label for="harga_produk" class="form-label">Harga Produk</label>
+            <input type="text" class="form-control form-control-sm @error('harga_produk') is-invalid @enderror"
+                name="harga_produk" id="harga_produk" aria-describedby="helpId" placeholder="Harga Produk"
+                value="{{ old('harga_produk') }}">
+            @error('harga_produk')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+            @enderror
+        </div>
+
+        <div class="mb-3">
             <label for="stok_produk" class="form-label">Stok Produk</label>
             <input type="text" class="form-control form-control-sm @error('stok_produk') is-invalid @enderror"
                 name="stok_produk" id="stok_produk" aria-describedby="helpId" placeholder="Stok Produk"

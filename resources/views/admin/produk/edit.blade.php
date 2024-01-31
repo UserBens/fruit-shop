@@ -7,16 +7,27 @@
         @csrf
         @method('put')
         <div class="mb-3">
-            <label for="nama_produk" class="form-label">Judul</label>
-            <input type="text" class="form-control form-control-sm" name="nama_produk" id="nama_produk" aria-describedby="helpId"
-                placeholder="Nama Produk" value="{{ $produk->nama_produk }}">
+            <label for="nama_produk" class="form-label">Nama Produk</label>
+            <input type="text" class="form-control form-control-sm" name="nama_produk" id="nama_produk"
+                aria-describedby="helpId" placeholder="Nama Produk" value="{{ $produk->nama_produk }}">
         </div>
 
         <div class="mb-3">
             <label for="image" class="form-label">Gambar Produk</label>
-            <input class="form-control @error('image') is-invalid @enderror" type="file" id="image"
-                name="image">
+            <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image">
             @error('image')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+            @enderror
+        </div>
+
+        <div class="mb-3">
+            <label for="harga_produk" class="form-label">Harga Produk</label>
+            <input type="text" class="form-control form-control-sm @error('harga_produk') is-invalid @enderror"
+                name="harga_produk" id="harga_produk" aria-describedby="helpId" placeholder="Harga Produk"
+                value="{{ $produk->harga_produk }}">
+            @error('harga_produk')
                 <div class="invalid-feedback">
                     {{ $message }}
                 </div>

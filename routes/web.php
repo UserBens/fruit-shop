@@ -18,6 +18,7 @@ use App\Http\Controllers\ShopController;
 */
 
 Route::get('/', [ShopController::class, 'index']);
+Route::get('/single-product/{id}', [ShopController::class, 'singleproduct'])->name('singleproduct');
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 

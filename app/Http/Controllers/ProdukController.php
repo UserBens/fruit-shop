@@ -42,6 +42,7 @@ class ProdukController extends Controller
             'nama_produk' => 'required|max:255',
             'image' => 'image|file|max:20024',
             'deskripsi_produk' => 'required',
+            'harga_produk' => 'required',
             'stok_produk' => 'required',
             'status' => 'required'
         ]);
@@ -88,6 +89,7 @@ class ProdukController extends Controller
             'nama_produk' => 'required|max:255',
             'image' => 'image|file|max:20024',
             'deskripsi_produk' => 'required',
+            'harga_produk' => 'required',
             'stok_produk' => 'required',
             'status' => 'required',
         ]);

@@ -31,8 +31,9 @@
                     <tr>
                         <th class="col-1">No</th>
                         <th class="col-2">Nama Produk</th>
-                        <th class="col-2">Stok Produk</th>
-                        <th class="col-2">Status</th>
+                        <th class="col-2">Harga Produk</th>
+                        <th class="col-1">Stok Produk</th>
+                        <th class="col-1">Status</th>
                         <th class="col-2">Dibuat Tanggal</th>
                         <th class="col-3">Aksi</th>
                     </tr>
@@ -42,6 +43,7 @@
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $item->nama_produk }}</td>
+                            <td>{{ $item->harga_produk }}</td>
                             <td>{{ $item->stok_produk }}</td>
                             <td>{{ $item->status }}</td>
                             <td>{{ $item->created_at }}</td>
