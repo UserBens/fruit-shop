@@ -19,10 +19,23 @@ use App\Http\Controllers\ShopController;
 
 Route::get('/', [ShopController::class, 'index']);
 Route::get('/single-product/{id}', [ShopController::class, 'singleproduct'])->name('singleproduct');
+// routes/web.php
+
+// Route::get('/payment/create/{id}', [ShopController::class, 'createpayment'])->name('create.payment');
+
+Route::post('/payment/create/{id}', [ShopController::class, 'createpayment'])->name('create.payment');
+
+// Route::middleware(['auth', 'user'])->group(function () {
+//     Route::get('/', [ShopController::class, 'index'])->name('index');
+//     Route::get('/single-product/{id}', [ShopController::class, 'singleproduct'])->name('singleproduct');
+//     // Tambahkan rute lainnya sesuai kebutuhan
+// });
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::resource('/produk', ProdukController::class)->middleware(['auth', 'verified']);
+// Route::middleware(['auth', 'admin'])->group(function () {
+//     Route::get('/admin/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
+// });
+Route::resource('/produk', ProdukController::class)->middleware('verified');
 
 // Route::middleware('auth')->group(function () {
 //     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -30,4 +43,4 @@ Route::resource('/produk', ProdukController::class)->middleware(['auth', 'verifi
 //     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 // });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

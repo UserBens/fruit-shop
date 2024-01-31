@@ -46,11 +46,16 @@
             @enderror
         </div>
 
-        <label for="file" class="form-label">Status Produk</label>
+        {{-- <label for="file" class="form-label">Status Produk</label>
         <select class="form-select mb-3" name="status" value="{{ $produk->status }}">
             <option value="Aktif">Aktif</option>
             <option value="Tidak Aktif">Tidak Aktif</option>
-        </select>
+            
+        </select> --}}
+
+        <label for="status" class="form-label">Status Produk</label>
+        <input type="checkbox" id="status" name="status" value="1" {{ $produk->status ? 'checked' : '' }}>
+        <label for="status">Aktif</label>
 
         <div class="mb-3">
             <label for="deskripsi_produk" class="form-label">Deskripsi Produk</label>

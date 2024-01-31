@@ -62,7 +62,7 @@
                         <!-- menu start -->
                         <nav class="main-menu">
                             <ul>
-                                <li class="current-list-item"><a href="#">Home</a></li>
+                                <li class="current-list-item"><a href="/">Home</a></li>
 
                                 <li><a href="shop.html">Shop</a>
                                     <ul class="sub-menu">
@@ -133,39 +133,38 @@
     <div class="single-product mt-150 mb-150">
         <div class="container">
             <div class="row">
-                
-                    <div class="col-md-5">
-                        <div class="single-product-img">
-                            <a href="#"><img src="{{ asset('storage/' . $produk->image) }}"
-                                    alt=""></a>
+
+                <div class="col-md-5">
+                    <div class="single-product-img">
+                        <a href="#"><img src="{{ asset('storage/' . $produk->image) }}" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="single-product-content">
+                        <h3>{{ $produk->nama_produk }}</h3>
+                        <p class="single-product-pricing"><span>Harga </span>{{ $produk->harga_produk }}</p>
+                        <p>{!! $produk->deskripsi_produk !!}</p>
+                        {{-- {!! strip_tags(Str::limit($item->deskripsi_produk, 300)) !!} --}}
+                        <div class="single-product-form">
+                            <p class="single-product-pricing mb-3"><span>Jumlah Stok </span>{{ $produk->stok_produk }}
+                            </p>
+
+                            <form id="payment-form" method="post"
+                                action="{{ route('create.payment', ['id' => $produk->id]) }}">
+                                @csrf
+                                <input type="submit" class="cart-btn" value="Bayar Sekarang">
+                            </form>
                         </div>
                     </div>
-                    <div class="col-md-7">
-                        <div class="single-product-content">
-                            <h3>Green apples have polyphenols</h3>
-                            <p class="single-product-pricing"><span>Per Kg</span> $50</p>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta sint dignissimos, rem
-                                commodi
-                                cum voluptatem quae reprehenderit repudiandae ea tempora incidunt ipsa, quisquam animi
-                                perferendis eos eum modi! Tempora, earum.</p>
-                            <div class="single-product-form">
-                                <form action="index.html">
-                                    <input type="number" placeholder="0">
-                                </form>
-                                <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to
-                                    Cart</a>
-                                <p><strong>Categories: </strong>Fruits, Organic</p>
-                            </div>
-                        </div>
-                    </div>
-               
+                </div>
+
             </div>
         </div>
     </div>
     <!-- end single product -->
 
     <!-- more products -->
-    <div class="more-products mb-150">
+    {{-- <div class="more-products mb-150">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 offset-lg-2 text-center">
@@ -177,42 +176,22 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-4 col-md-6 text-center">
-                    <div class="single-product-item">
-                        <div class="product-image">
-                            <a href="single-product.html"><img src="assets/img/products/product-img-1.jpg"
-                                    alt=""></a>
+                @foreach ($allproduk as $item)
+                    <div class="col-lg-4 col-md-6 text-center">
+                        <div class="single-product-item">
+                            <div class="product-image">
+                                <a href="single-product.html"><img src="{{ asset('storage/' . $item->image) }}"
+                                        alt=""></a>
+                            </div>
+                            <h3>{{ $item->nama_produk }}</h3>
+                            <p class="product-price"><span>Harga</span>RP. {{ $item->harga_produk }} </p>
+                            <a href="{{ route('singleproduct', $item->id) }}" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
                         </div>
-                        <h3>Strawberry</h3>
-                        <p class="product-price"><span>Per Kg</span> 85$ </p>
-                        <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
                     </div>
-                </div>
-                <div class="col-lg-4 col-md-6 text-center">
-                    <div class="single-product-item">
-                        <div class="product-image">
-                            <a href="single-product.html"><img src="assets/img/products/product-img-2.jpg"
-                                    alt=""></a>
-                        </div>
-                        <h3>Berry</h3>
-                        <p class="product-price"><span>Per Kg</span> 70$ </p>
-                        <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 offset-lg-0 offset-md-3 text-center">
-                    <div class="single-product-item">
-                        <div class="product-image">
-                            <a href="single-product.html"><img src="assets/img/products/product-img-3.jpg"
-                                    alt=""></a>
-                        </div>
-                        <h3>Lemon</h3>
-                        <p class="product-price"><span>Per Kg</span> 35$ </p>
-                        <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
-    </div>
+    </div> --}}
     <!-- end more products -->
 
     <!-- logo carousel -->

@@ -62,7 +62,7 @@
                         <!-- menu start -->
                         <nav class="main-menu">
                             <ul>
-                                <li class="current-list-item"><a href="#">Home</a></li>
+                                <li class="current-list-item"><a href="/">Home</a></li>
 
                                 <li><a href="shop.html">Shop</a>
                                     <ul class="sub-menu">

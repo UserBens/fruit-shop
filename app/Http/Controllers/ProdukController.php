@@ -17,7 +17,9 @@ class ProdukController extends Controller
         $produk = Produk::when($keyword, function ($query, $keyword) {
             return $query->where('nama_produk', 'like', '%' . $keyword . '%')
                 ->orWhere('deskripsi_produk', 'like', '%' . $keyword . '%');
-        })->orderBy('nama_produk', 'desc')->paginate(6);
+        }) // Only fetch active products
+            ->orderBy('nama_produk', 'desc')
+            ->paginate(6);
 
         return view('admin.produk.index', [
             'produk' => $produk,
@@ -44,8 +46,10 @@ class ProdukController extends Controller
             'deskripsi_produk' => 'required',
             'harga_produk' => 'required',
             'stok_produk' => 'required',
-            'status' => 'required'
+            'status' => 'boolean'
         ]);
+
+        $validatedData['status'] = $request->has('status');
 
         if ($request->file('image')) {
 
@@ -91,11 +95,14 @@ class ProdukController extends Controller
             'deskripsi_produk' => 'required',
             'harga_produk' => 'required',
             'stok_produk' => 'required',
-            'status' => 'required',
+            'status' => 'boolean',
         ]);
 
         // Temukan postingan berdasarkan ID
         $produk = Produk::findOrFail($id);
+
+        $validatedData['status'] = $request->has('status');
+
 
         if ($request->file('image')) {
 
