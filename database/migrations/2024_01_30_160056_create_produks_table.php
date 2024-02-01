@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('nama_produk');
             $table->text('deskripsi_produk');
             $table->integer('harga_produk');
-            $table->string('stok_produk');
+            $table->integer('stok_produk');
             $table->boolean('status')->default(true);
             $table->text('image')->nullable();
             $table->timestamps();

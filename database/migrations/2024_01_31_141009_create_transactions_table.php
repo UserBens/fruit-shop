@@ -16,6 +16,8 @@ return new class extends Migration
             $table->unsignedBigInteger('produk_id');
             $table->foreign('produk_id')->references('id')->on('produk');
             $table->string('snap_token')->nullable();
+            $table->string('order_id')->nullable();
+            $table->enum('status', ['pending', 'success', 'failure'])->default('pending');
             $table->timestamps();
         });
     }
